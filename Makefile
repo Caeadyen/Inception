@@ -6,7 +6,7 @@
 #    By: hrings <hrings@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:13:19 by hrings            #+#    #+#              #
-#    Updated: 2023/04/12 17:09:31 by hrings           ###   ########.fr        #
+#    Updated: 2023/04/17 01:09:08 by hrings           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,13 @@ down:
 	@docker-compose -f ./srcs/docker-compose.yml down
 
 clean:
-	docker stop $$(docker ps -qa)
-	docker rm $$(docker ps -qa)
-	docker rmi -f $$(docker images -qa)
-	docker volume rm $$(docker volume ls -q)
-	docker network rm $$(docker network ls -q) 2>/dev/null
-	
-.PHONY: all re down clean
+	-docker stop $$(docker ps -qa)
+	-docker rm $$(docker ps -qa)
+	-docker rmi -f $$(docker images -qa)
+	-docker volume rm $$(docker volume ls -q)
+	-docker network rm $$(docker network ls -q) 2>/dev/null
+
+fclean: clean
+	-sudo rm -rf data/*
+
+.PHONY: all re down clean fclean
