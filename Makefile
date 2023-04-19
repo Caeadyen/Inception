@@ -6,15 +6,19 @@
 #    By: hrings <hrings@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:13:19 by hrings            #+#    #+#              #
-#    Updated: 2023/04/17 01:09:08 by hrings           ###   ########.fr        #
+#    Updated: 2023/04/19 10:48:44 by hrings           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+LOGIN = hrings
 all: clean up
 
 up:
-	@docker-compose -f ./srcs/docker-compose.yml build --no-cache
-	@docker-compose -f ./srcs/docker-compose.yml up -d --force-recreate
+	@bash make_dir.sh
+	@docker-compose -f ./srcs/docker-compose.yml build
+#--no-cache
+	@docker-compose -f ./srcs/docker-compose.yml up -d
+#--force-recreate
 
 down:
 	@docker-compose -f ./srcs/docker-compose.yml down
@@ -27,6 +31,6 @@ clean:
 	-docker network rm $$(docker network ls -q) 2>/dev/null
 
 fclean: clean
-	-sudo rm -rf data/*
+	-sudo rm -rf /home/$(LOGIN)/data*
 
 .PHONY: all re down clean fclean

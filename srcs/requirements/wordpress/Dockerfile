@@ -6,7 +6,7 @@
 #    By: hrings <hrings@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 10:54:28 by hrings            #+#    #+#              #
-#    Updated: 2023/04/12 16:00:39 by hrings           ###   ########.fr        #
+#    Updated: 2023/04/18 16:11:27 by hrings           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,4 +21,4 @@ EXPOSE 9000
 
 ENTRYPOINT [ "/wb-install.sh" ]
 
-CMD ["/usr/sbin/php-fpm7.4", "-F"]
+#CMD ["/usr/sbin/php-fpm7.4", "-F"]
