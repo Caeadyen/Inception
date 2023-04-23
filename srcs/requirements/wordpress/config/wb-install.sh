@@ -24,9 +24,18 @@ wp config set SECURE_AUTH_SALT $WP_SECURE_AUTH_SALT --allow-root
 wp config set LOGGED_IN_SALT $WP_LOGGED_IN_SALT --allow-root
 wp config set NONCE_SALT $WP_NONCE_SALT --allow-root
 
+wp config set WP_REDIS_HOST $WP_REDIS_HOST --allow-root
+wp config set WP_REDIS_PORT $WP_REDIS_PORT --allow-root
+wp config set WP_REDIS_TIMEOUT $WP_REDIS_TIMEOUT --allow-root
+wp config set WP_REDIS_READ_TIMEOUT $WP_REDIS_READ_TIMEOUT --allow-root
+wp config set WP_REDIS_DATABASE $WP_REDIS_DATABASE --allow-root
+wp config set WP_CACHE true --allow-root
 
 wp core install --url=$DOMAIN_NAME/ --title=$WP_TITLE --admin_user=$WP_ADMIN_USR --admin_password=$WP_ADMIN_PWD --admin_email=$WP_ADMIN_EMAIL --skip-email --allow-root
 wp user create $WP_USR $WP_EMAIL --role=author --user_pass=$WP_PWD --allow-root
 
+wp plugin install redis-cache --activate --allow-root
+wp plugin update --all --allow-root
+wp redis enable --allow-root
 mkdir /run/php
 /usr/sbin/php-fpm7.4 -F
