@@ -100,6 +100,15 @@ services:
       - /sys:/sys:ro 
       - /var/lib/docker/:/var/lib/docker:ro  
 
+  website:
+    container_name: website
+    build:
+      context: ./requirements/bonus/website
+      dockerfile: ./Dockerfile
+    networks:
+      - inception
+    ports:
+      - "3000:3000"
 networks:
   inception:
 

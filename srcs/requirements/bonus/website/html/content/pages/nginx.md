@@ -1,0 +1,10 @@
+---
+title: "Nginx"
+date: 2023-04-28T19:30:49+02:00
+tags: ["nginx"]
+draft: false
+---
+
+What Is NGINX?
+
+NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more. It started out as a web server designed for maximum performance and stability. In addition to its HTTP server capabilities, NGINX can also function as a proxy server for email (IMAP, POP3, and SMTP) and a reverse proxy and load balancer for HTTP, TCP, and UDP servers.

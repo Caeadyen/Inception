@@ -1,0 +1,31 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Inception"
+
+[permalinks]
+  pages = "/:filename/"
+
+
+[params]
+	homeText = "This is a static website"
+
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Pages"
+    pre = "edit"
+    url = "/pages/"
+    weight = 2
+  [[menu.main]]
+    name = "Tags"
+    pre = "tag"
+    url = "/tags/"
+    weight = 3
+
+[taxonomies]
+  tag = "tags"
