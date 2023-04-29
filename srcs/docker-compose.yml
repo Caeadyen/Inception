@@ -18,6 +18,7 @@ services:
       - wordpress_v:/var/www/html
     env_file:
       - .env
+
   wordpress:
     image: wordpress
     container_name: wordpress
@@ -25,8 +26,6 @@ services:
     build:
       context: ./requirements/wordpress/
       dockerfile: ./Dockerfile
-    ports:
-      - "9000:9000"
     networks:
       - inception
     env_file:
@@ -48,8 +47,6 @@ services:
       - .env
     networks:
       - inception 
-    ports: 
-      - "3306:3306"
     volumes:
       - mariadb_v:/var/lib/mysql
 
@@ -60,8 +57,6 @@ services:
     build:
       context: ./requirements/bonus/redis
       dockerfile: ./Dockerfile
-    ports:
-      - "6379:6379"
     networks:
       - inception
     
