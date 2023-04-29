@@ -7,8 +7,7 @@ title = "Inception"
 
 
 [params]
-	homeText = "This is a static website"
-
+  footer = $FOOTER
 
 [menu]
   [[menu.main]]

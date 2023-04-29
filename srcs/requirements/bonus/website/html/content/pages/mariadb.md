@@ -1,6 +1,7 @@
 ---
 title: "Mariadb"
 date: 2023-04-28T19:30:23+02:00
+tags: ["Mariadb", "Mandatory"]
 draft: false
 ---
 

@@ -4,6 +4,7 @@ services:
   nginx:
     image: nginx
     container_name: nginx
+    restart: always
     build:
       context: ./requirements/nginx/
       dockerfile: ./Dockerfile
@@ -20,6 +21,7 @@ services:
   wordpress:
     image: wordpress
     container_name: wordpress
+    restart: always
     build:
       context: ./requirements/wordpress/
       dockerfile: ./Dockerfile
@@ -34,9 +36,11 @@ services:
       - redis
     volumes:
       - wordpress_v:/var/www/html
+
   mariadb:
     image: mariadb
     container_name: mariadb
+    restart: always
     build:
       context: ./requirements/mariadb/
       dockerfile: ./Dockerfile
@@ -50,7 +54,9 @@ services:
       - mariadb_v:/var/lib/mysql
 
   redis:
+    image: redis
     container_name: redis
+    restart: always
     build:
       context: ./requirements/bonus/redis
       dockerfile: ./Dockerfile
@@ -60,7 +66,9 @@ services:
       - inception
     
   ftp_server:
+    image: ftp_server
     container_name: ftp_server
+    restart: always
     build:
       context: ./requirements/bonus/ftp_server
       dockerfile: ./Dockerfile
@@ -76,7 +84,9 @@ services:
       - wordpress
     
   adminer:
+    image: adminer
     container_name: adminer
+    restart: always
     build:
       context: ./requirements/bonus/adminer
       dockerfile: ./Dockerfile 
@@ -86,7 +96,9 @@ services:
       - "4242:80"
     
   cadvisor:
+    image: cadvisor
     container_name: cadvisor
+    restart: always
     build:
       context: ./requirements/bonus/cadvisor
       dockerfile: ./Dockerfile
@@ -101,14 +113,19 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro  
 
   website:
+    image: website
     container_name: website
+    restart: always
     build:
       context: ./requirements/bonus/website
       dockerfile: ./Dockerfile
+    env_file:
+      - .env
     networks:
       - inception
     ports:
       - "3000:3000"
+
 networks:
   inception:
 
@@ -118,10 +135,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/hrings/data/mariadb
+      device: /home/${LOGIN_NAME}/data/mariadb
   wordpress_v:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/hrings/data/wordpress
+      device: /home/${LOGIN_NAME}/data/wordpress

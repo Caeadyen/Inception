@@ -1,7 +1,7 @@
 ---
 title: "Nginx"
 date: 2023-04-28T19:30:49+02:00
-tags: ["nginx"]
+tags: ["Nginx", "Mandatory"]
 draft: false
 ---
 

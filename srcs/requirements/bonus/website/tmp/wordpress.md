@@ -1,7 +1,7 @@
 ---
 title: "Wordpress"
 date: 2023-04-28T19:20:11+02:00
-tags: ["php", "wordpress"]
+tags: ["php", "Wordpress", "Mandatory"]
 draft: false
 ---
 
@@ -12,7 +12,7 @@ websites on the Internet. Yes – more than one in four websites that you
 visit are likely powered by WordPress.
 
 For this Project we can access the Wordpress site via:
-"login".42.fr:443
+$WORDPRESS
 as we use SSL
 to log into the Dashboard we use the address:
-"login".42.fr:443/wp-login.php
+$WORDPRESSLOGIN
