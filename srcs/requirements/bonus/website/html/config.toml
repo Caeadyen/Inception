@@ -6,9 +6,6 @@ title = "Inception"
   pages = "/:filename/"
 
 
-[params]
-  footer = $FOOTER
-
 [menu]
   [[menu.main]]
     name = "Home"

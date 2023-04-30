@@ -6,7 +6,7 @@
 #    By: hrings <hrings@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:13:19 by hrings            #+#    #+#              #
-#    Updated: 2023/04/29 20:43:27 by hrings           ###   ########.fr        #
+#    Updated: 2023/04/30 09:13:30 by hrings           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ fclean: clean
 	-sudo rm -rf /home/$(LOGIN_NAME)/data/wordpress/*
 
 host:
-	@grep -qxF '127.0.0.1 $(LOGIN_NAME).42.fr' /etc/hosts || echo "127.0.0.1 $(LOGIN_NAME).42.fr" >> /etc/hosts
+	@grep -qxF '127.0.0.1 $(LOGIN_NAME).42.fr' /etc/hosts || sudo bash -c " echo 127.0.0.1 $(LOGIN_NAME).42.fr >> /etc/hosts"
 $(WORDPRESS):
 	sudo mkdir -p $@
 
