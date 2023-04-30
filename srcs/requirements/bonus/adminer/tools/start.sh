@@ -6,4 +6,4 @@ wget https://www.adminer.org/latest.php -O var/www/html/adminer/index.php
 
 cd var/www/html/adminer
 
-php -S 0.0.0.0:80
+php -S 0.0.0.0:4242

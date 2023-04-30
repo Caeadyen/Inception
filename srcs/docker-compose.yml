@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 services:
   nginx:
@@ -87,8 +87,7 @@ services:
       dockerfile: ./Dockerfile 
     networks:
       - inception
-    ports:
-      - "4242:80"
+
     
   cadvisor:
     image: cadvisor
@@ -99,8 +98,6 @@ services:
       dockerfile: ./Dockerfile
     networks:
       - inception
-    ports:
-      - "8080:8080"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro 
@@ -118,8 +115,6 @@ services:
       - .env
     networks:
       - inception
-    ports:
-      - "3000:3000"
 
 networks:
   inception:
