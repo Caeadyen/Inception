@@ -6,7 +6,7 @@
 #    By: hrings <hrings@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:13:19 by hrings            #+#    #+#              #
-#    Updated: 2023/04/30 09:13:30 by hrings           ###   ########.fr        #
+#    Updated: 2023/05/03 17:27:35 by hrings           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,16 @@ include ./srcs/.env
 MARIADB = /home/$(LOGIN_NAME)/data/mariadb
 WORDPRESS = /home/$(LOGIN_NAME)/data/wordpress
 
-all: clean up host
+all: clean host build up
+
+build: $(MARIADB) $(WORDPRESS)
+	@cd srcs && docker compose -f docker-compose.yml build --no-cache
 
 up: $(MARIADB) $(WORDPRESS)
-	@cd srcs && docker-compose -f docker-compose.yml build
-	@cd srcs && docker-compose -f docker-compose.yml up -d
+	@cd srcs && docker compose -f docker-compose.yml up -d
 
 down:
-	@cd srcs && docker-compose -f docker-compose.yml down
+	@cd srcs && docker compose -f docker-compose.yml down
 
 clean:
 	-docker stop $$(docker ps -qa)
@@ -31,6 +33,7 @@ clean:
 	-docker network rm $$(docker network ls -q) 2>/dev/null
 
 fclean: clean
+	@docker system prune -f
 	-sudo rm -rf /home/$(LOGIN_NAME)/data/mariadb/*
 	-sudo rm -rf /home/$(LOGIN_NAME)/data/wordpress/*
 
