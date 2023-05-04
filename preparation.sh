@@ -19,7 +19,4 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-sudo apt install docker-compose
-
-
-echo "restart VM now"
+sudo apt-get install filezilla
