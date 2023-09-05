@@ -11,3 +11,7 @@ As asked for by the Subject, there are a lot of important variable stored in an 
 ---
 
 In the sample-env you see all the variables that are needed for the Project.
+
+---
+
+The Project isn't starting anymore, mostly due version changes in diffrent parts of the project
