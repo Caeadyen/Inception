@@ -8,3 +8,6 @@ machine.
 
 As asked for by the Subject, there are a lot of important variable stored in an .env file. Without the file the Project doesn't start.
 
+---
+
+In the sample-env you see all the variables that are needed for the Project.
