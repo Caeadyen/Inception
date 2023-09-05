@@ -1,13 +1,15 @@
+// 42login and 42login.42.fr
 DOMAIN_NAME=
 LOGIN_NAME=
 
-
+// Database information
 MYSQL_DATABASE=
 MYSQL_USER=
 MYSQL_PASSWORD=
 MYSQL_HOST=
 MYSQL_ROOT_PWD=
 
+// Wordpress information
 WP_TITLE=
 WP_ADMIN_USR=
 WP_ADMIN_PWD=
@@ -16,6 +18,7 @@ WP_USR=
 WP_EMAIL=
 WP_PWD=
 
+// Secrets for Wordpress (basicly random letters)
 WP_AUTH_KEY=
 WP_SECURE_AUTH_KEY=
 WP_LOGGED_IN_KEY=
@@ -25,21 +28,18 @@ WP_SECURE_AUTH_SALT=
 WP_LOGGED_IN_SALT=
 WP_NONCE_SALT=
 
+// Information for redis
 WP_REDIS_HOST=
 WP_REDIS_PORT=
 WP_REDIS_TIMEOUT=
 WP_REDIS_READ_TIMEOUT=
 WP_REDIS_DATABASE=
 
-db_name=
-db_user=
-db_pwd=
-db_root_pwd=
-
+// Information for the FTP
 FTP_USER=
 FTP_PASS=
 
-
+// Informations for the static website, without them no links in the webpage
 ADMINER=
 CADVISOR=
 WORDPRESS=
